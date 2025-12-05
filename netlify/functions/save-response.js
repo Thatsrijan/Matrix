@@ -1,5 +1,5 @@
 // netlify/functions/save-response.js
-// Email-only logger using Resend SDK (Node.js)
+// Email logger using Resend SDK
 
 const { Resend } = require("resend");
 
@@ -39,7 +39,7 @@ exports.handler = async (event) => {
     };
   }
 
-  // 🔍 GET = simple test endpoint
+  // 🔍 GET = test email
   if (event.httpMethod === "GET") {
     try {
       const { data, error } = await resend.emails.send({
